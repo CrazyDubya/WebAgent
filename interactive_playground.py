@@ -449,9 +449,9 @@ def create_interactive_demo(playground: WebAgentPlayground):
                     with thinking_container:
                         for i, step in enumerate(thinking_steps):
                             progress_bars[agent].progress((i + 1) / len(thinking_steps))
-                            st.write(f"**Step {i+1}:** {step}")
-                            time.sleep(0.3)  # Simulate processing time
-                    
+                            with st.empty():
+                                st.write(f"**Step {i+1}:** {step}")
+                                time.sleep(0.3)  # Simulate processing time
                     progress_bars[agent].progress(1.0)
                     agent_results[agent] = result
                 

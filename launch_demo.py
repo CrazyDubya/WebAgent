@@ -13,6 +13,16 @@ from pathlib import Path
 class WebAgentLauncher:
     def __init__(self):
         self.root_dir = Path(__file__).parent
+        self.import_name_mapping = {
+            "streamlit": "streamlit",
+            "plotly": "plotly",
+            "pandas": "pandas",
+            "beautifulsoup4": "bs4",
+            "pillow": "PIL",
+            "crawl4ai": "crawl4ai",
+            "qwen-agent": "qwen_agent",
+            "gradio": "gradio"
+        }
         self.demos = {
             "playground": {
                 "name": "🎮 Interactive Playground",
@@ -158,6 +168,12 @@ class WebAgentLauncher:
                 print(f"❌ {key} ({description}) - Optional")
         
         print("\n💡 Tip: Demos work in mock mode without API keys!")
+        print("\n🚀 Quick Start Commands:")
+        print("   python launch_demo.py playground    # Interactive demo with all agents")
+        print("   python launch_demo.py unified       # Single interface for all components")
+        print("   python launch_demo.py webwalker     # Enhanced WebWalker demo")
+        print("\n🤝 New Feature: Try the 'Collaborative Research Pipeline' scenario")
+        print("   to see all 4 agents working together on complex research tasks!")
     
     def install_requirements(self):
         """Install all requirements for demos"""

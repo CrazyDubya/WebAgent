@@ -125,9 +125,8 @@ In a real scenario, WebWalker would:
 </html>
 """
         
-        # Mock base64 encoded screenshot (1x1 pixel image)
-        mock_screenshot = "iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYPhfDwAChwGA60e6kgAAAABJRU5ErkJggg=="
-        
+        # Mock base64 encoded screenshot
+        mock_screenshot = MOCK_SCREENSHOT_BASE64
         return mock_html, mock_content, mock_screenshot
     
     def extract_links(self, html: str) -> List[Dict[str, str]]:

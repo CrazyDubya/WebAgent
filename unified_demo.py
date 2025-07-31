@@ -368,9 +368,11 @@ def main():
                 with st.spinner(f"🔄 {selected_agent} is processing your query..."):
                     # Simulate processing time
                     progress_bar = st.progress(0)
+                    progress_placeholder = st.empty()
                     for i in range(100):
-                        time.sleep(0.02)
                         progress_bar.progress(i + 1)
+                        progress_placeholder.text(f"Progress: {i + 1}%")
+                        time.sleep(0.02)
                     
                     # Generate response
                     if demo_mode == "Mock Mode (No API Keys)":

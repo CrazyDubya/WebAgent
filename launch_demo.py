@@ -52,8 +52,9 @@ class WebAgentLauncher:
         missing_deps = []
         
         for requirement in demo["requirements"]:
+            import_name = self.import_name_mapping.get(requirement, requirement.replace("-", "_"))
             try:
-                __import__(requirement.replace("-", "_"))
+                __import__(import_name)
             except ImportError:
                 missing_deps.append(requirement)
         
